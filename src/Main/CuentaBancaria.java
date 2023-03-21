@@ -39,7 +39,15 @@ public class CuentaBancaria {
 	public double obtenerSaldo() {
 		return saldo.isEmpty() ? 0 : saldo.get(saldo.size() - 1);
 	}
-
+	
+	/**
+	 * 
+	 * la funcion recibe un saldo y podra permitir que la cuenta pase a un estado negativo
+	 * siempre y cuando no supere el credito máximo
+	 * 
+	 * @param cantidad
+	 * @throws Exception("")
+	 */
 	public void modificarCredito(double cantidad) throws Exception {
 		if (obtenerSaldo() + cantidad < 0) {
 			throw new Exception("El nuevo credito no puede ser aplicado");
